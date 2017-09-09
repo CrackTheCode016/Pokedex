@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,47 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPn-F5-iFl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="TLo-8r-fhR"/>
+                                </constraints>
+                            </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="T6a-b1-QFe">
+                                <rect key="frame" x="0.0" y="67" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6cV-bb-swP"/>
+                                </constraints>
+                                <color key="barTintColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="52z-12-vSw">
+                                <rect key="frame" x="0.0" y="111" width="375" height="556"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XPn-F5-iFl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1JQ-Aj-SFs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="52z-12-vSw" secondAttribute="bottom" id="AxG-VS-HwE"/>
+                            <constraint firstItem="52z-12-vSw" firstAttribute="top" secondItem="T6a-b1-QFe" secondAttribute="bottom" id="Hev-pm-Rfr"/>
+                            <constraint firstAttribute="trailing" secondItem="52z-12-vSw" secondAttribute="trailing" id="IQs-tz-6gd"/>
+                            <constraint firstItem="T6a-b1-QFe" firstAttribute="top" secondItem="XPn-F5-iFl" secondAttribute="bottom" id="JNK-vm-VNj"/>
+                            <constraint firstItem="T6a-b1-QFe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Njz-Je-A3v"/>
+                            <constraint firstItem="XPn-F5-iFl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YFa-gu-7wy"/>
+                            <constraint firstAttribute="trailing" secondItem="XPn-F5-iFl" secondAttribute="trailing" id="cmN-JK-OTc"/>
+                            <constraint firstItem="52z-12-vSw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="klE-gO-I0K"/>
+                            <constraint firstAttribute="trailing" secondItem="T6a-b1-QFe" secondAttribute="trailing" id="xix-M7-E3W"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg" width="1920" height="1200"/>
+    </resources>
 </document>
