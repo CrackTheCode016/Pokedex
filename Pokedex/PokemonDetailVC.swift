@@ -24,17 +24,19 @@ class PokemonDetailVC: UIViewController {
     @IBOutlet weak var nextEvo: UIImageView!
     @IBOutlet weak var evoLabel: UILabel!
     @IBOutlet weak var mainTopLabel: UILabel!
-   
-    
+    @IBOutlet weak var mainStackView: UIStackView!
+    @IBOutlet weak var Segment: UISegmentedControl!
+    @IBOutlet weak var containerMovesView: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let img = UIImage(named: "\(pokemon.pokedexId)")
-        
         mainPokeImage.image = img
         currentPoke.image = img
+        performSegue(withIdentifier: "movesSegue", sender: pokemon)
+        print()
+        
         pokemon.downloadPokemonDetails {
             self.updateUI()
         }
@@ -42,7 +44,6 @@ class PokemonDetailVC: UIViewController {
     }
     
     func updateUI() {
-        
         attackLabel.text = pokemon.attack
         defenseLabel.text = pokemon.defense
         heightLabel.text = pokemon.height
@@ -64,9 +65,33 @@ class PokemonDetailVC: UIViewController {
             evoLabel.text = evotxt
 
         }
+    }
+    
+    @IBAction func bioMovesControl(_ sender: Any) {
+        if Segment.selectedSegmentIndex == 0 {
+            mainStackView.isHidden = false
+            containerMovesView.isHidden = true
+        }
+        
+        if Segment.selectedSegmentIndex == 1 {
+            mainStackView.isHidden = true
+            containerMovesView.isHidden = false
+
+        }
         
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "movesSegue" {
+            if let destination = segue.destination as? MovesVC {
+                if let pokemoneObj = sender as? Pokemon {
+                    destination.pokemon = pokemoneObj
+                }
+            }
+        }
+    }
+
     
     @IBAction func dismissView(_ sender: Any) {
         dismiss(animated: true, completion: nil)
