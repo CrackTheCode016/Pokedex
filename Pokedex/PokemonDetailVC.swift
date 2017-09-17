@@ -27,16 +27,15 @@ class PokemonDetailVC: UIViewController {
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var Segment: UISegmentedControl!
     @IBOutlet weak var containerMovesView: UIView!
-    
+    var movesVC: MovesVC!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let img = UIImage(named: "\(pokemon.pokedexId)")
-        mainPokeImage.image = img
-        currentPoke.image = img
-        performSegue(withIdentifier: "movesSegue", sender: pokemon)
-        print()
-        
+       let img = UIImage(named: "\(pokemon.pokedexId)")
+       mainPokeImage.image = img
+       currentPoke.image = img
+        poke = pokemon
         pokemon.downloadPokemonDetails {
             self.updateUI()
         }
@@ -61,8 +60,7 @@ class PokemonDetailVC: UIViewController {
         else {
             nextEvo.isHidden = false
             nextEvo.image = UIImage(named: pokemon.nextEvoId)
-            let evotxt = "Next Evolution: \(pokemon.nextEvoName), Level \(pokemon.nextEvoLevel)"
-            evoLabel.text = evotxt
+            evoLabel.text = "Next Evolution: \(pokemon.nextEvoName), Level \(pokemon.nextEvoLevel)"
 
         }
     }
@@ -71,30 +69,21 @@ class PokemonDetailVC: UIViewController {
         if Segment.selectedSegmentIndex == 0 {
             mainStackView.isHidden = false
             containerMovesView.isHidden = true
+            
         }
         
         if Segment.selectedSegmentIndex == 1 {
             mainStackView.isHidden = true
+            poke = pokemon
             containerMovesView.isHidden = false
 
         }
         
         
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "movesSegue" {
-            if let destination = segue.destination as? MovesVC {
-                if let pokemoneObj = sender as? Pokemon {
-                    destination.pokemon = pokemoneObj
-                }
-            }
-        }
-    }
-
-    
+    }    
     @IBAction func dismissView(_ sender: Any) {
         dismiss(animated: true, completion: nil)
         
     }
+    
 }
