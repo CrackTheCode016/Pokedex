@@ -11,19 +11,20 @@ import UIKit
 class MovesVC: UIViewController {
     
     var poke: Pokemon!
-
+    @IBOutlet weak var mainMovesLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-   }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "movesSeg" {
-            if let vc = segue.destination as? PokemonDetailVC {
-                poke = vc.pokemon
-            }
+        if poke.name == "" {
+            print("The name is nil")
         }
-    }
+        
+        else {
+            mainMovesLabel.text = "\(poke.name.capitalized)'s Moves"
+            print(poke.name)
+        }
+   }
 
 
 }

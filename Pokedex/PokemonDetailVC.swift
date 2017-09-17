@@ -86,4 +86,10 @@ class PokemonDetailVC: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MovesVC", let vc = segue.destination as? MovesVC {
+            vc.poke = pokemon
+        }
+    }
+    
 }

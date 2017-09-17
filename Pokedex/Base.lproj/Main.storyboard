@@ -165,7 +165,7 @@
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1s-fa-DKn">
                                 <rect key="frame" x="0.0" y="123" width="414" height="423"/>
                                 <connections>
-                                    <segue destination="dfN-9u-sIA" kind="embed" id="0D7-zF-SKQ"/>
+                                    <segue destination="dfN-9u-sIA" kind="embed" identifier="MovesVC" id="0D7-zF-SKQ"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zu5-pD-gNJ">
@@ -482,6 +482,9 @@
                             <constraint firstItem="Aks-qh-dX1" firstAttribute="top" secondItem="zpP-hg-r7g" secondAttribute="bottom" id="Lye-0q-nmj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainMovesLabel" destination="Aks-qh-dX1" id="Mfp-9U-Hnb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gp7-vE-xcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
