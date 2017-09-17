@@ -144,9 +144,6 @@
 				DE49114D1F6EC0F8005AAEC0 /* Controller */,
 				DE49114C1F6EC0F3005AAEC0 /* View */,
 				DE49114B1F6EC0ED005AAEC0 /* Model */,
-				DE05780A1F6426980069CE2E /* AppDelegate.swift */,
-				DE0578111F6426980069CE2E /* Assets.xcassets */,
-				DE0578161F6426980069CE2E /* Info.plist */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
@@ -193,6 +190,7 @@
 				DE05780C1F6426980069CE2E /* ViewController.swift */,
 				DE5D6E501F649FC900CB3E5B /* PokemonDetailVC.swift */,
 				DE4911491F6EB575005AAEC0 /* MovesVC.swift */,
+				DE05780A1F6426980069CE2E /* AppDelegate.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -200,6 +198,7 @@
 		DE49114E1F6EC123005AAEC0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				DE0578111F6426980069CE2E /* Assets.xcassets */,
 				DEB5EE181F644D1F004D72D4 /* pokemon.ttf */,
 				DEB5EE1A1F644E9A004D72D4 /* music.mp3 */,
 				DEB5EE101F642A2C004D72D4 /* pokemon.csv */,
@@ -212,6 +211,7 @@
 			children = (
 				DEB5EE161F644451004D72D4 /* csv.swift */,
 				DE518CF91F6B14EE00C86330 /* Constant.swift */,
+				DE0578161F6426980069CE2E /* Info.plist */,
 			);
 			name = Utilites;
 			sourceTree = "<group>";

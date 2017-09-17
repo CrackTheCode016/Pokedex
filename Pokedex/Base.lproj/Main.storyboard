@@ -163,7 +163,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1s-fa-DKn">
-                                <rect key="frame" x="0.0" y="123" width="414" height="423"/>
+                                <rect key="frame" x="0.0" y="115" width="414" height="431"/>
                                 <connections>
                                     <segue destination="dfN-9u-sIA" kind="embed" identifier="MovesVC" id="0D7-zF-SKQ"/>
                                 </connections>
@@ -427,7 +427,7 @@
                             <constraint firstItem="b1s-fa-DKn" firstAttribute="centerX" secondItem="u4i-C5-5mv" secondAttribute="centerX" id="um1-KW-CeK"/>
                             <constraint firstItem="H6Z-5n-apo" firstAttribute="top" secondItem="UtU-Cj-B7q" secondAttribute="bottom" constant="8" id="vLD-rK-BaQ"/>
                             <constraint firstItem="b1s-fa-DKn" firstAttribute="leading" secondItem="u4i-C5-5mv" secondAttribute="leading" id="vTI-eE-SjA"/>
-                            <constraint firstItem="b1s-fa-DKn" firstAttribute="top" secondItem="UtU-Cj-B7q" secondAttribute="bottom" constant="8" id="yEs-UC-Ujo"/>
+                            <constraint firstItem="b1s-fa-DKn" firstAttribute="top" secondItem="UtU-Cj-B7q" secondAttribute="bottom" id="yEs-UC-Ujo"/>
                         </constraints>
                     </view>
                     <connections>
@@ -461,7 +461,7 @@
                         <viewControllerLayoutGuide type="bottom" id="LCf-Ua-ICS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Vas-Eg-9cn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="423"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon's Moves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aks-qh-dX1">
@@ -474,12 +474,21 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qDZ-vo-ZyM">
+                                <rect key="frame" x="20" y="75" width="155" height="155"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="155" id="F0p-AV-wjU"/>
+                                    <constraint firstAttribute="height" constant="155" id="rOz-2b-nv3"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Aks-qh-dX1" secondAttribute="trailing" id="HES-im-T7p"/>
                             <constraint firstItem="Aks-qh-dX1" firstAttribute="leading" secondItem="Vas-Eg-9cn" secondAttribute="leading" id="IeB-TL-1Nn"/>
                             <constraint firstItem="Aks-qh-dX1" firstAttribute="top" secondItem="zpP-hg-r7g" secondAttribute="bottom" id="Lye-0q-nmj"/>
+                            <constraint firstItem="qDZ-vo-ZyM" firstAttribute="top" secondItem="Aks-qh-dX1" secondAttribute="bottom" constant="8" id="aqj-1b-H1f"/>
+                            <constraint firstItem="qDZ-vo-ZyM" firstAttribute="leading" secondItem="Vas-Eg-9cn" secondAttribute="leading" constant="20" id="xRr-1S-wZO"/>
                         </constraints>
                     </view>
                     <connections>
@@ -488,7 +497,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gp7-vE-xcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1838" y="-61"/>
+            <point key="canvasLocation" x="1837.68115942029" y="-61.548913043478265"/>
         </scene>
     </scenes>
     <resources>
