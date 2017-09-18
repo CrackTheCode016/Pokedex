@@ -17,7 +17,20 @@ class Pokemon {
     private var _nextEvoId: String!
     private var _nextEvoLevel: String!
     private var _type: String!
-    private var _pokemonURL: String!
+    var _pokemonURL: String!
+    private var _moveName: String!
+    private var _moveDesc: String!
+    private var _power: String!
+    private var _accuracy: String!
+    private var _pp: String!
+    
+    var moveName: String {
+        if _moveName == nil {
+            _moveName = ""
+        }
+        return _moveName
+    }
+
     
     var nextEvoName: String {
         if _nextEvoName == nil  {
@@ -148,6 +161,7 @@ class Pokemon {
                         
                     }
                     
+                    
                     if let descArr = dict["descriptions"] as? [Dictionary<String, String>], descArr.count > 0 {
                         
                         if let url = descArr[0]["resource_uri"] {
@@ -166,6 +180,7 @@ class Pokemon {
                         }
                     }
                     
+
                     if let evolutions = dict["evolutions"] as? [Dictionary<String, AnyObject>], evolutions.count > 0 {
                         
                         if let nextEvo = evolutions[0]["to"] as? String {
@@ -205,5 +220,5 @@ class Pokemon {
 
     
 }
-    
+
 
